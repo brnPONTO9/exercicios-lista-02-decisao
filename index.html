@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Lista 02 — Estruturas de Decisão (20 exercícios)</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Lista 02 — Estruturas de Decisão</h1>
+    <p class="lead">20 exercícios resolvidos com condicionais (simples, compostas e encadeadas). Preencha os campos e clique em Executar.</p>
+  </header>
+
+  <main class="grid">
+    <!-- 1 -->
+    <section class="card">
+      <h2>1) Maioridade</h2>
+      <label>Idade</label>
+      <input id="l2e1" type="number" step="1">
+      <button onclick="l2e1()">Executar</button>
+      <div id="o1" class="out"></div>
+    </section>
+
+    <!-- 2 -->
+    <section class="card">
+      <h2>2) Quem é mais velho?</h2>
+      <div class="row">
+        <div><label>Nome 1</label><input id="l2e2n1" type="text"></div>
+        <div><label>Idade 1</label><input id="l2e2i1" type="number" step="1"></div>
+      </div>
+      <div class="row">
+        <div><label>Nome 2</label><input id="l2e2n2" type="text"></div>
+        <div><label>Idade 2</label><input id="l2e2i2" type="number" step="1"></div>
+      </div>
+      <button onclick="l2e2()">Executar</button>
+      <div id="o2" class="out"></div>
+    </section>
+
+    <!-- 3 -->
+    <section class="card">
+      <h2>3) Sinal do número</h2>
+      <label>Número</label>
+      <input id="l2e3" type="number" step="any">
+      <button onclick="l2e3()">Executar</button>
+      <div id="o3" class="out"></div>
+    </section>
+
+    <!-- 4 -->
+    <section class="card">
+      <h2>4) Faixa etária <small>criança, adolescente, adulto, idoso</small></h2>
+      <label>Idade</label>
+      <input id="l2e4" type="number" step="1">
+      <button onclick="l2e4()">Executar</button>
+      <div id="o4" class="out"></div>
+      <div class="hint">Critérios: criança (0–12), adolescente (13–17), adulto (18–59), idoso (60+).</div>
+    </section>
+
+    <!-- 5 -->
+    <section class="card">
+      <h2>5) Maior de dois inteiros</h2>
+      <div class="row">
+        <div><label>A</label><input id="l2e5a" type="number" step="1"></div>
+        <div><label>B</label><input id="l2e5b" type="number" step="1"></div>
+      </div>
+      <button onclick="l2e5()">Executar</button>
+      <div id="o5" class="out"></div>
+    </section>
+
+    <!-- 6 -->
+    <section class="card">
+      <h2>6) Aprovado por média?</h2>
+      <div class="row">
+        <div><label>Nota 1</label><input id="l2e6a" type="number" step="any"></div>
+        <div><label>Nota 2</label><input id="l2e6b" type="number" step="any"></div>
+      </div>
+      <label>Nota 3</label>
+      <input id="l2e6c" type="number" step="any">
+      <button onclick="l2e6()">Executar</button>
+      <div id="o6" class="out"></div>
+    </section>
+
+    <!-- 7 -->
+    <section class="card">
+      <h2>7) Par ou ímpar</h2>
+      <label>Inteiro</label>
+      <input id="l2e7" type="number" step="1">
+      <button onclick="l2e7()">Executar</button>
+      <div id="o7" class="out"></div>
+    </section>
+
+    <!-- 8 -->
+    <section class="card">
+      <h2>8) Bônus por salário</h2>
+      <label>Salário (R$)</label>
+      <input id="l2e8" type="number" step="any">
+      <button onclick="l2e8()">Executar</button>
+      <div id="o8" class="out"></div>
+      <div class="hint">> 2000 → 10% • ≤ 2000 → 5%</div>
+    </section>
+
+    <!-- 9 -->
+    <section class="card">
+      <h2>9) Dias do mês</h2>
+      <label>Nome do mês</label>
+      <input id="l2e9" type="text" placeholder="ex.: janeiro">
+      <button onclick="l2e9()">Executar</button>
+      <div id="o9" class="out"></div>
+      <div class="hint">Fevereiro: 28 dias (sem considerar ano bissexto).</div>
+    </section>
+
+    <!-- 10 -->
+    <section class="card">
+      <h2>10) Ordenar três inteiros (crescente)</h2>
+      <div class="row">
+        <div><label>A</label><input id="l2e10a" type="number" step="1"></div>
+        <div><label>B</label><input id="l2e10b" type="number" step="1"></div>
+        <div><label>C</label><input id="l2e10c" type="number" step="1"></div>
+      </div>
+      <button onclick="l2e10()">Executar</button>
+      <div id="o10" class="out"></div>
+    </section>
+
+    <!-- 11 -->
+    <section class="card">
+      <h2>11) Situação por faltas</h2>
+      <label>Faltas</label>
+      <input id="l2e11" type="number" step="1">
+      <button onclick="l2e11()">Executar</button>
+      <div id="o11" class="out"></div>
+      <div class="hint">> 15 faltas → Reprovado por falta</div>
+    </section>
+
+    <!-- 12 -->
+    <section class="card">
+      <h2>12) Total por código do produto</h2>
+      <div class="row">
+        <div><label>Código</label>
+          <select id="l2e12cod">
+            <option value="1">1 — Caneta (R$ 2,50)</option>
+            <option value="2">2 — Caderno (R$ 15,90)</option>
+            <option value="3">3 — Mochila (R$ 120,00)</option>
+            <option value="4">4 — Livro (R$ 38,00)</option>
+            <option value="5">5 — Garrafa (R$ 25,00)</option>
+          </select>
+        </div>
+        <div><label>Quantidade</label><input id="l2e12qtd" type="number" step="1"></div>
+      </div>
+      <button onclick="l2e12()">Executar</button>
+      <div id="o12" class="out"></div>
+      <table>
+        <thead><tr><th>Código</th><th>Produto</th><th>Preço (R$)</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Caneta</td><td>2,50</td></tr>
+          <tr><td>2</td><td>Caderno</td><td>15,90</td></tr>
+          <tr><td>3</td><td>Mochila</td><td>120,00</td></tr>
+          <tr><td>4</td><td>Livro</td><td>38,00</td></tr>
+          <tr><td>5</td><td>Garrafa</td><td>25,00</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- 13 -->
+    <section class="card">
+      <h2>13) Pode se aposentar?</h2>
+      <div class="row">
+        <div><label>Idade</label><input id="l2e13i" type="number" step="1"></div>
+        <div><label>Sexo</label>
+          <select id="l2e13s">
+            <option value="M">M</option>
+            <option value="F">F</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="l2e13()">Executar</button>
+      <div id="o13" class="out"></div>
+      <div class="hint">Regras: homens ≥ 65 • mulheres ≥ 60.</div>
+    </section>
+
+    <!-- 14 -->
+    <section class="card">
+      <h2>14) IMC e classificação</h2>
+      <div class="row">
+        <div><label>Peso (kg)</label><input id="l2e14p" type="number" step="any"></div>
+        <div><label>Altura (m)</label><input id="l2e14a" type="number" step="any"></div>
+      </div>
+      <button onclick="l2e14()">Executar</button>
+      <div id="o14" class="out"></div>
+      <div class="hint">Classificação: &lt;18.5 abaixo • 18.5–24.9 normal • 25–29.9 sobrepeso • ≥30 obesidade.</div>
+    </section>
+
+    <!-- 15 -->
+    <section class="card">
+      <h2>15) Situação por nota</h2>
+      <div class="row">
+        <div><label>Nome do aluno</label><input id="l2e15n" type="text"></div>
+        <div><label>Nota</label><input id="l2e15x" type="number" step="any"></div>
+      </div>
+      <button onclick="l2e15()">Executar</button>
+      <div id="o15" class="out"></div>
+    </section>
+
+    <!-- 16 -->
+    <section class="card">
+      <h2>16) Valor das maçãs</h2>
+      <label>Quantidade</label>
+      <input id="l2e16q" type="number" step="1">
+      <button onclick="l2e16()">Executar</button>
+      <div id="o16" class="out"></div>
+      <div class="hint">&lt; 12 → R$ 0,50 cada • ≥ 12 → R$ 0,40 cada.</div>
+    </section>
+
+    <!-- 17 -->
+    <section class="card">
+      <h2>17) Quantos salários mínimos?</h2>
+      <div class="row">
+        <div><label>Salário mínimo (R$)</label><input id="l2e17m" type="number" step="any"></div>
+        <div><label>Salário do funcionário (R$)</label><input id="l2e17s" type="number" step="any"></div>
+      </div>
+      <button onclick="l2e17()">Executar</button>
+      <div id="o17" class="out"></div>
+    </section>
+
+    <!-- 18 -->
+    <section class="card">
+      <h2>18) Saudação por turno</h2>
+      <div class="row">
+        <div><label>Nome</label><input id="l2e18n" type="text"></div>
+        <div><label>Turno</label>
+          <select id="l2e18t">
+            <option value="M">M — Matutino</option>
+            <option value="V">V — Vespertino</option>
+          </select>
+        </div>
+      </div>
+      <button onclick="l2e18()">Executar</button>
+      <div id="o18" class="out"></div>
+    </section>
+
+    <!-- 19 -->
+    <section class="card">
+      <h2>19) Pode votar?</h2>
+      <label>Idade</label>
+      <input id="l2e19" type="number" step="1">
+      <button onclick="l2e19()">Executar</button>
+      <div id="o19" class="out"></div>
+      <div class="hint">Obrigatório: 18–70 • Facultativo: 16–17 e &gt;70 • &lt;16: não pode.</div>
+    </section>
+
+    <!-- 20 -->
+    <section class="card">
+      <h2>20) Média de três inteiros e situação</h2>
+      <div class="row">
+        <div><label>A</label><input id="l2e20a" type="number" step="1"></div>
+        <div><label>B</label><input id="l2e20b" type="number" step="1"></div>
+        <div><label>C</label><input id="l2e20c" type="number" step="1"></div>
+      </div>
+      <button onclick="l2e20()">Executar</button>
+      <div id="o20" class="out"></div>
+    </section>
+  </main>
+
+  <footer style="max-width:1100px; margin: 20px auto 0; color: var(--muted); font-size:12px;">
+    <p>Feito em JavaScript puro (ES6). Dica: para decimais, use ponto (.) — ex.: 1.75</p>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+</body>
+</html>
